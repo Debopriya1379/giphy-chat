@@ -1,0 +1,36 @@
+.AddMsg{
+    width: 85%;
+    height: 4rem;
+    margin: .5rem;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    /* border: 1px solid black; */
+}
+
+.AddMsg input{
+    width: 40%;
+    height: 2rem;
+    padding: 0 .5rem;
+    background-color: #C4C4C4;
+    border: none;
+    outline: none;
+}
+
+.Buttons{
+    width: 8em;
+    margin: 2px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Buttons button{
+    width: 45%;
+    height: 1.5rem;
+    color: rgb(2, 2, 2);
+    background-color: #C4C4C4;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,44 @@
+.GifSearch{
+    width: 40%;
+    display: flex;
+    /* place-content: center; */
+}
+.searchModal{
+    width: 80%;
+    height: 20rem;
+    padding: 1rem;
+    /* background-color: cornflowerblue; */
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchModal input{
+    width: 90%;
+    height: 1.6rem;
+    padding-left: .5rem;
+    outline: none;
+    /* box-shadow: (0,0,0,3.5); */
+}
+
+.searchModal button{
+    width: 20%;
+    height: 1.5rem;
+    margin: .5rem 0;
+}
+
+.gifs{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    overflow-y: scroll;
+}
+
+.GifSearch .gifs img{
+    width: 100%;
+}
+
+#selected_gif:active{
+    width: 120%;
+    border: 4px solid black;
+}
