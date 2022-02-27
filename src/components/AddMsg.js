@@ -10,9 +10,10 @@ export const AddMsg = ({setOpenGifs}) => {
 
     const addMsg = async()=>{
         const msgCollectionRef = collection(db,"messages")
-        console.log('first')
+        // console.log('first')
         await addDoc(msgCollectionRef,{
             msgtext : msgText,
+            createdAt : new Date().toLocaleTimeString()
         });
         setMsgText("");
     }

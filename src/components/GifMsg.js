@@ -9,8 +9,8 @@ export const GifMsg = ({msg}) => {
                 <div id='pic'>P</div>
             </div>
             <div className="profile_info">
-                <p>D2gmail.com</p>
-                <p>57 min ago</p>
+                <p>anonymous@127</p>
+                <p>{msg.createdAt}</p>
             </div>
         </div>
         <div className="Message_body">

@@ -12,12 +12,13 @@ export const GifSearch = ({setOpenGifs}) => {
     const [gifurls,setGifurls] = useState([]);
     const [searchKey,setSearchKey] = useState("");
 
-    const[msgUrl,setMsgUrl]= useState("");
+    // const[msgUrl,setMsgUrl]= useState("");
 
-    const addGifMsg = async()=>{
+    const addGifMsg = async(url)=>{
         const msgCollectionRef = collection(db,"messages")
         await addDoc(msgCollectionRef,{
-            msgurl : msgUrl,             ////// check if the msgUrl is null
+            msgurl : url,             ////// check if the msgUrl is null
+            createdAt : new Date().toLocaleTimeString()
         });
     }
 
@@ -41,28 +42,34 @@ export const GifSearch = ({setOpenGifs}) => {
   return (
     <div className='GifSearch'>
         <div className="searchModal">
-            <input type="text" onChange={(e)=>setSearchKey(e.target.value)}/>
+            <input type="text" placeholder='search gif' onChange={(e)=>setSearchKey(e.target.value)}/>
             <button onClick={()=>searchGifs(searchKey)}>search</button>
+            
+            <p>Click on the gif to post after searching</p>
 
             <button onClick={()=>{
                 setOpenGifs(false);
-                setMsgUrl("");
+                // setMsgUrl("");
             }}>close</button>
 
             <div className="gifs">
                 {gifurls.map((gif)=>{
                     return(
                         <div id='selected_gif' key={gif.id}>
-                            <img src={gif.images.fixed_height.url} alt="" onClick={()=>{setMsgUrl(gif.images.fixed_height.url)}} />
+                            <img src={gif.images.fixed_height.url} alt="" onClick={()=>{
+                                // setMsgUrl(gif.images.fixed_height.url);
+                                addGifMsg(gif.images.fixed_height.url);
+                                setOpenGifs(false);
+                                }} />
                         </div>
                     )
                 })}
             </div>
             
-            <button onClick={()=>{
+            {/* <button onClick={()=>{
                 setOpenGifs(false);
                 addGifMsg();
-            }}>Post</button>
+            }}>Post</button> */}
         </div>
     </div>
   )
