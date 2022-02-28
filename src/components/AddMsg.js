@@ -9,13 +9,18 @@ export const AddMsg = ({setOpenGifs}) => {
     const[msgText,setMsgText]= useState("");
 
     const addMsg = async()=>{
-        const msgCollectionRef = collection(db,"messages")
+
+        if (!msgText) {
+            alert("Please type a text");
+        } else {
+            const msgCollectionRef = collection(db,"messages")
         // console.log('first')
         await addDoc(msgCollectionRef,{
             msgtext : msgText,
             createdAt : new Date().toLocaleTimeString()
         });
-        setMsgText("");
+        setMsgText("");   
+        }
     }
 
 

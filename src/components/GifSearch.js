@@ -24,7 +24,10 @@ export const GifSearch = ({setOpenGifs}) => {
 
     const searchGifs = async(key)=>{
         try {
-            const results = await Axios("https://api.giphy.com/v1/gifs/search",{
+            if (!key) {
+                alert("Please search with a text");
+            } else {
+                const results = await Axios("https://api.giphy.com/v1/gifs/search",{
                     params: {
                         api_key : process.env.giphy_apikey,
                         limit: 10,
@@ -32,7 +35,8 @@ export const GifSearch = ({setOpenGifs}) => {
                     }
             });
             console.log(results.data.data);
-            setGifurls(results.data.data);
+            setGifurls(results.data.data);   
+            }
         } catch (error) {
             console.log(error)
         }
