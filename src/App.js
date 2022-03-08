@@ -8,9 +8,9 @@ function App() {
       <Main/>
       <footer>
           <p> &#169; Giphy chat 2022</p>
-          <a href="https://developers.giphy.com/" target="_blank" >Giphy developers API</a>
+          <a href="https://developers.giphy.com/" target="_blank" rel="noreferrer" >Giphy developers API</a>
           <p>Made with love and React JS</p>
-          <a href="https://www.linkedin.com/in/debopriya-das-5b978b202/" target="_blank" >Developer contact</a>
+          <a href="https://www.linkedin.com/in/debopriya-das-5b978b202/" target="_blank" rel="noreferrer" >Developer contact</a>
       </footer>
     </div>
   );
