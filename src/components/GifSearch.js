@@ -1,10 +1,11 @@
+import dotenv from 'dotenv'
+dotenv.config();
 import {React,useState} from 'react'
 import Axios from 'axios';
-import dotenv from 'dotenv'
 import './GifSearch.css';
 import {collection,addDoc} from 'firebase/firestore'
 
-dotenv.config();
+
 
 import db from '../firebase-config'
 
