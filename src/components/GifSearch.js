@@ -32,7 +32,7 @@ export const GifSearch = ({setOpenGifs}) => {
             } else {
                 const results = await Axios("https://api.giphy.com/v1/gifs/search",{
                     params: {
-                        api_key : process.env.giphy_apikey,
+                        api_key : process.env.Giphy_Apikey,
                         limit: 10,
                         q:key
                     }

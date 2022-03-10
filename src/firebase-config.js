@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
-    apiKey: process.env.firebase_apikey,
+    apiKey: process.env.Firebase_Apikey,
     authDomain: "giphy-chat-bc67e.firebaseapp.com",
     projectId: "giphy-chat-bc67e",
     storageBucket: "giphy-chat-bc67e.appspot.com",
